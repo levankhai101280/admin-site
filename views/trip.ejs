@@ -31,7 +31,11 @@
         <% trips.forEach(function(trip) { %>
             <li>
                 <strong><%= trip.name %></strong> - <%= trip.from %> đến <%= trip.to %> vào <%= trip.departureTime %>
-                <!-- Thêm các liên kết để sửa/xóa chuyến tàu nếu cần -->
+                <!-- Thêm các liên kết để sửa/xóa chuyến tàu -->
+                <a href="/trips/edit/<%= trip._id %>">Sửa</a>
+                <form action="/trips/delete/<%= trip._id %>" method="POST" style="display:inline;">
+                    <button type="submit">Xóa</button>
+                </form>
             </li>
         <% }) %>
     </ul>

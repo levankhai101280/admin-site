@@ -1,14 +1,27 @@
-<!-- views/editTrip.ejs -->
-<h1>Sửa chuyến tàu</h1>
-<form action="/trips/edit/<%= trip._id %>" method="POST">
-  <label for="name">Tên chuyến tàu:</label>
-  <input type="text" name="name" value="<%= trip.name %>" required>
-  
-  <label for="date">Ngày khởi hành:</label>
-  <input type="date" name="date" value="<%= trip.date %>" required>
-  
-  <label for="destination">Điểm đến:</label>
-  <input type="text" name="destination" value="<%= trip.destination %>" required>
-  
-  <button type="submit">Cập nhật chuyến tàu</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa Chuyến Tàu</title>
+</head>
+<body>
+    <h1>Sửa Chuyến Tàu</h1>
+
+    <form action="/trips/edit/<%= trip._id %>" method="POST">
+        <label for="name">Tên Chuyến Tàu:</label>
+        <input type="text" id="name" name="name" value="<%= trip.name %>" required><br><br>
+
+        <label for="from">Điểm Đi:</label>
+        <input type="text" id="from" name="from" value="<%= trip.from %>" required><br><br>
+
+        <label for="to">Điểm Đến:</label>
+        <input type="text" id="to" name="to" value="<%= trip.to %>" required><br><br>
+
+        <label for="departureTime">Ngày Giờ Khởi Hành:</label>
+        <input type="datetime-local" id="departureTime" name="departureTime" value="<%= trip.departureTime.toISOString().slice(0,16) %>" required><br><br>
+
+        <button type="submit">Lưu Thay Đổi</button>
+    </form>
+</body>
+</html>
