@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyến Tàu</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Danh sách Chuyến Tàu</h1>
+
+    <!-- Form thêm chuyến tàu -->
+    <form action="/trips/add" method="POST">
+        <label for="name">Tên Chuyến Tàu:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="from">Điểm Đi:</label>
+        <input type="text" id="from" name="from" required><br><br>
+
+        <label for="to">Điểm Đến:</label>
+        <input type="text" id="to" name="to" required><br><br>
+
+        <label for="departureTime">Ngày Giờ Khởi Hành:</label>
+        <input type="datetime-local" id="departureTime" name="departureTime" required><br><br>
+
+        <button type="submit">Thêm Chuyến Tàu</button>
+    </form>
+
+    <h2>Danh sách Chuyến Tàu</h2>
+    <ul>
+        <% trips.forEach(function(trip) { %>
+            <li>
+                <strong><%= trip.name %></strong> - <%= trip.from %> đến <%= trip.to %> vào <%= trip.departureTime %>
+                <!-- Thêm các liên kết để sửa/xóa chuyến tàu nếu cần -->
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

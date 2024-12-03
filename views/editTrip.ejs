@@ -1,0 +1,14 @@
+<!-- views/editTrip.ejs -->
+<h1>Sửa chuyến tàu</h1>
+<form action="/trips/edit/<%= trip._id %>" method="POST">
+  <label for="name">Tên chuyến tàu:</label>
+  <input type="text" name="name" value="<%= trip.name %>" required>
+  
+  <label for="date">Ngày khởi hành:</label>
+  <input type="date" name="date" value="<%= trip.date %>" required>
+  
+  <label for="destination">Điểm đến:</label>
+  <input type="text" name="destination" value="<%= trip.destination %>" required>
+  
+  <button type="submit">Cập nhật chuyến tàu</button>
+</form>

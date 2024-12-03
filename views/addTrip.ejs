@@ -1,0 +1,14 @@
+<!-- views/addTrip.ejs -->
+<h1>Thêm chuyến tàu mới</h1>
+<form action="/trips/add" method="POST">
+  <label for="name">Tên chuyến tàu:</label>
+  <input type="text" name="name" required>
+  
+  <label for="date">Ngày khởi hành:</label>
+  <input type="date" name="date" required>
+  
+  <label for="destination">Điểm đến:</label>
+  <input type="text" name="destination" required>
+  
+  <button type="submit">Thêm chuyến tàu</button>
+</form>
